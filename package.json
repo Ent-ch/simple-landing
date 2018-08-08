@@ -1,0 +1,39 @@
+{
+  "version": "0.1.0",
+  "name": "test.landing",
+  "private": true,
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.2.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "meow": "^5.0.0",
+    "style-loader": "^0.21.0",
+    "uglifyjs-webpack-plugin": "1.2.5",
+    "webpack": "3.12.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
+    "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
+    "@fortawesome/react-fontawesome": "^0.1.0-11",
+    "es6-shim": "^0.35.3",
+    "muicss": "^0.9.39",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-router-dom": "^4.3.1",
+    "remarkable": "^1.7.1",
+    "whatwg-fetch": "^2.0.4"
+  },
+  "scripts": {
+    "build": "SET NODE_ENV=prod && webpack --color",
+    "build-dev": "SET NODE_ENV=development && webpack -d --color",
+    "start": "SET NODE_ENV=development && webpack --watch  -d --color",
+    "lint": "eslint wwwroot/jsx/**/*.jsx"
+  }
+}
