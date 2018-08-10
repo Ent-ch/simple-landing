@@ -23,17 +23,20 @@
     "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
     "@fortawesome/react-fontawesome": "^0.1.0-11",
     "es6-shim": "^0.35.3",
+    "httpserv": "^1.0.12",
     "muicss": "^0.9.39",
     "react": "^16.4.0",
+    "react-country-flag": "^0.3.1",
     "react-dom": "^16.4.0",
     "react-router-dom": "^4.3.1",
+    "react-router-hash-link": "^1.2.0",
     "remarkable": "^1.7.1",
     "whatwg-fetch": "^2.0.4"
   },
   "scripts": {
     "build": "SET NODE_ENV=prod && webpack --color",
     "build-dev": "SET NODE_ENV=development && webpack -d --color",
-    "start": "SET NODE_ENV=development && webpack --watch  -d --color",
+    "start": "SET NODE_ENV=development && start /min httpserv && webpack --watch  -d --color",
     "lint": "eslint wwwroot/jsx/**/*.jsx"
   }
 }

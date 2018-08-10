@@ -1567,6 +1567,10 @@ des.js@^1.0.0:
     inherits "^2.0.1"
     minimalistic-assert "^1.0.0"
 
+detect-emoji-support@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/detect-emoji-support/-/detect-emoji-support-0.1.6.tgz#693d3ef3b3202da7e35b900a5c6d3b6ac0326ea7"
+
 detect-indent@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/detect-indent/-/detect-indent-4.0.0.tgz#f76d064352cdf43a1cb6ce619c4ee3a9475de208"
@@ -2233,6 +2237,10 @@ hosted-git-info@^2.1.4:
 https-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
+
+httpserv@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/httpserv/-/httpserv-1.0.12.tgz#4f421be1390887b6de953ca92e08658b27931d2b"
 
 humps@^2.0.1:
   version "2.0.1"
@@ -3404,6 +3412,12 @@ react-addons-shallow-compare@^15.6.2:
     fbjs "^0.8.4"
     object-assign "^4.1.0"
 
+react-country-flag@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/react-country-flag/-/react-country-flag-0.3.1.tgz#47d5d80e560a8813f58f82527e814faeae24b051"
+  dependencies:
+    detect-emoji-support "^0.1.6"
+
 react-dom@^16.4.0:
   version "16.4.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.2.tgz#4afed569689f2c561d2b8da0b819669c38a0bda4"
@@ -3423,6 +3437,12 @@ react-router-dom@^4.3.1:
     prop-types "^15.6.1"
     react-router "^4.3.1"
     warning "^4.0.1"
+
+react-router-hash-link@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-router-hash-link/-/react-router-hash-link-1.2.0.tgz#ce824cc5f0502ce9b0686bb6dd9c08659b24094c"
+  dependencies:
+    prop-types "^15.6.0"
 
 react-router@^4.3.1:
   version "4.3.1"
