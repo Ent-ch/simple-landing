@@ -12,10 +12,12 @@ import Container from 'muicss/lib/react/container';
 import 'muicss/dist/css/mui.css';
 import './app.css';
 
+import { apiUrl } from './constant.js';
 
 import MdRender from "./components/MdRender.jsx";
 import Header from "./components/Header.jsx";
 import Content from "./components/Content.jsx";
+import About from "./components/About.jsx";
 
 const NoMatch = ({ location }) => (
   <div>
@@ -25,11 +27,15 @@ const NoMatch = ({ location }) => (
   </div>
 );
 
-const mainPage = () => <App mainChapter="home">
+const MainPage = () => <App mainChapter="home">
   <MdRender chapter="home" />
 </App>;
 
-const documentsPage = ({ match: { params: { chapter = 'documentation' }}})  => {
+const AboutPage = () => <App mainChapter="About">
+  <About />
+</App>;
+
+const DocumentsPage = ({ match: { params: { chapter = 'documentation' }}})  => {
     return <App mainChapter={chapter}>
       <MdRender chapter={chapter.toLowerCase()} />
     </App>;
@@ -39,16 +45,18 @@ const documentsPage = ({ match: { params: { chapter = 'documentation' }}})  => {
 class App extends React.Component {
     state = {
         searchText: '',
+        cats: [],
     };
 
     componentWillMount() {
-        // fetch('/Categories').then(data => {
-        //     return data.json();
-        // }).then(cats => {
-        //     this.setState({
-        //         cats,
-        //     });
-        // });
+        fetch(`${apiUrl}/Categories`).then(data => {
+            return data.json();
+        }).then(cats => {
+          console.log(cats);
+          this.setState({
+            cats,
+          });
+        });
     }
 
     handleSearch = (event) => {
@@ -92,9 +100,10 @@ const homeEl = document.getElementById('root_jsx');
 homeEl && ReactDOM.render(
     <HashRouter>
         <Switch>
-            <Route exact path='/' component={mainPage}/>
-            <Route path='/Documentation/:chapter' component={documentsPage}/>
-            <Route path='/Documentation' component={documentsPage}/>
+            <Route exact path='/' component={MainPage}/>
+            <Route path='/Documentation/:chapter' component={DocumentsPage}/>
+            <Route path='/Documentation' component={DocumentsPage}/>
+            <Route path='/About' component={AboutPage}/>
             <Route component={NoMatch} />
         </Switch>
     </HashRouter>,

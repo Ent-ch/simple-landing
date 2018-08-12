@@ -1,7 +1,12 @@
 ﻿import React from 'react';
 
-export const catsPath = '/#/Services';
-export const helpPath = '/#/Help';
+export const strCats = (cats) => cats.reduce((txt, el) =>
+    txt += `- ${el.name}: ${el.services.reduce((srvTxt, el) => srvTxt += `${el.name}, `, '')}\n`, '');
+
+export const suppSrvsSet = (currDoc, strCats) => currDoc.replace(
+    /\*\*Supported services\*\*[\s\S]*?\./gim,
+    `**Supported services**\n\n ${strCats}`
+);
 
 export const fetchInit = {
     method: 'GET',

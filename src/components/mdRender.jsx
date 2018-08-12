@@ -1,6 +1,7 @@
 ﻿import React from 'react';
 import Remarkable from 'remarkable';
 
+import { docsDir } from '../constant.js';
 import { SlideBlock } from '../helpers.jsx';
 
 export default class MdRender extends React.Component {
@@ -19,9 +20,8 @@ export default class MdRender extends React.Component {
     }
 
     getData = chapter => {
-      const docsDir = 'https://raw.githubusercontent.com/bNesisDeveloper/bNesis/master/Landing/'
 
-      fetch(`${docsDir}${chapter}.md`).then(data => {
+      fetch(`${docsDir}/${chapter}.md`).then(data => {
         const text = data.text();
 
         return text;

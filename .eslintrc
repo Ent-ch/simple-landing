@@ -1,5 +1,8 @@
 {
-    "extends": "eslint:recommended",
+    "extends": [
+      "eslint:recommended",
+      "plugin:require-path-exists/recommended"
+    ],
     "env": {
       "browser": true,
       "commonjs": true,
@@ -24,5 +27,8 @@
     },
     "globals": {
       "$": true
-    }    
+    },
+    "plugins": [
+        "require-path-exists"
+      ]    
 }
