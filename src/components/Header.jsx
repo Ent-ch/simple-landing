@@ -1,10 +1,14 @@
 import React from 'react';
 import { NavHashLink as NavLink, HashLink as Link } from 'react-router-hash-link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faUniversity } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import ReactCountryFlag from 'react-country-flag';
+import { getText as getTextMain } from '../constant.js';
 
-const Header = () => <header className="mui-appbar mui--z1" id="top">
+const Header = ({lang = 'ua', handleLang}) => {
+  const getText = text => getTextMain(lang, text);
+
+  return <header className="mui-appbar mui--z1" id="top">
     <div className="mui-container">
       <table>
         <tbody>
@@ -13,15 +17,18 @@ const Header = () => <header className="mui-appbar mui--z1" id="top">
           <td className="mui--text-title"><a href="#" smooth>Brand.io</a></td>
           <td className="mui--text-right">
             <ul className="mui-list--inline mui--text-body2">
-              <li><Link to="/#footer" smooth>Footer</Link></li>
-              <li><a href="#">Pricing</a></li>
-              <li><a href="#"><FontAwesomeIcon icon={faUser} /> Login <ReactCountryFlag code="UA" svg /></a></li>
+              <li><Link to="/#footer" smooth>{getText('Footer')}</Link></li>
+              <li><a href="#">{getText('Pricing')}</a></li>
+              <li><a href="#"><FontAwesomeIcon icon={faUser} /> {getText('Login')} </a></li>
+              <li><a onClick={() => handleLang('ua')}><ReactCountryFlag code="UA" svg /></a></li>
+              <li><a onClick={() => handleLang('us')}><ReactCountryFlag code="US" svg /></a></li>
             </ul>
           </td>
         </tr>
         </tbody>
       </table>
     </div>
-</header>;
+</header>
+};
 
 export default Header;

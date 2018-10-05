@@ -1,46 +1,7 @@
 ﻿import React from 'react';
-import { Line, defaults } from 'react-chartjs-2';
 
 import { apiUrl } from '../constant.js';
-import Stat from './Stat.jsx';
-
-const {global, line} = defaults;
-
-const chartOptions = {
-    ...global,
-    ...line,
-    responsive: true,
-    title: {
-        display: true,
-        text: 'bNesis SDK development statistics'
-    },
-    tooltips: {
-        mode: 'label',
-    },
-    hover: {
-        mode: 'dataset'
-    },
-    scales: {
-        xAxes: [{
-            display: true,
-            scaleLabel: {
-                show: true,
-                labelString: 'Date'
-            }
-        }],
-        yAxes: [{
-            display: true,
-            scaleLabel: {
-                show: true,
-                labelString: 'Value'
-            },
-            ticks: {
-                suggestedMin: 0,
-                suggestedMax: 30,
-            }
-        }]
-    }
-};
+// import Stat from './Stat.jsx';
 
 export default class About extends React.Component {
     constructor(props) {
@@ -53,7 +14,7 @@ export default class About extends React.Component {
     }
 
     componentDidMount() {
-        this.getData();
+        // this.getData();
     }
 
 
@@ -77,12 +38,6 @@ export default class About extends React.Component {
             <div className="row">
                 <div className="col-md-12">
                     <div className="x_panel">
-                        <Stat />
-                        <Line
-                          data={chartData}
-                          height={200}
-                          options={chartOptions}
-                        />
                     </div>
                 </div>
             </div>

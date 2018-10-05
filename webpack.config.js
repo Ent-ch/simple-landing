@@ -1,4 +1,4 @@
-﻿switch (process.env.NODE_ENV.trim()) {
+﻿switch (process.env.NODE_ENV && process.env.NODE_ENV.trim()) {
     case 'prod':
     case 'production':
         module.exports = require('./webpack.dev.config');

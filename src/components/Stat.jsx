@@ -13,6 +13,25 @@ export default class Stat extends React.Component {
     });
   }
 
+  sendData = () => {
+    var field3 = 'eeeerrrr22244555';
+    var url = "https://docs.google.com/forms/d/1uyfUirXounliTxoZ5XjSJmfVPR93w6KPCsE8deYZTPg/formResponse";
+    
+     
+     var formData  = new FormData();
+     formData.append("entry.1907684808", field3);
+     
+     fetch(url, {
+       method: 'post',
+       headers: {
+         //'Accept': 'application/xml, text/xml, */*; q=0.01',
+         //'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+       },    
+       body: formData
+     });
+     
+  }
+
   render() {
     const { totalservicecount, totalapicount, totaldatatypecount, totalapiservers } = this.state.data;
     const arrStat = [

@@ -13,22 +13,20 @@
     "css-loader": "^1.0.0",
     "eslint": "^5.2.0",
     "extract-text-webpack-plugin": "^3.0.2",
+    "eslint-plugin-require-path-exists": "^1.1.9",
     "meow": "^5.0.0",
     "style-loader": "^0.21.0",
     "uglifyjs-webpack-plugin": "1.2.5",
+    "httpserv": "^1.0.12",
     "webpack": "3.12.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
     "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
     "@fortawesome/react-fontawesome": "^0.1.0-11",
-    "chart.js": "2.6.0",
     "es6-shim": "^0.35.3",
-    "eslint-plugin-require-path-exists": "^1.1.9",
-    "httpserv": "^1.0.12",
     "muicss": "^0.9.39",
     "react": "^16.4.0",
-    "react-chartjs-2": "^2.7.4",
     "react-country-flag": "^0.3.1",
     "react-dom": "^16.4.0",
     "react-router-dom": "^4.3.1",
@@ -37,9 +35,10 @@
     "whatwg-fetch": "^2.0.4"
   },
   "scripts": {
-    "build": "SET NODE_ENV=prod && webpack --color",
-    "build-dev": "SET NODE_ENV=development && webpack -d --color",
-    "start": "SET NODE_ENV=development && start /min httpserv && webpack --watch  -d --color",
+    "build": "export NODE_ENV=prod & webpack --color",
+    "start": "httpserv -p 8080 & webpack --watch  -d --color",
+    "build-win": "SET NODE_ENV=prod && webpack -d --color",
+    "start-win": "SET NODE_ENV=development && start /min httpserv && webpack --watch  -d --color",
     "lint": "eslint wwwroot/jsx/**/*.jsx"
   }
 }

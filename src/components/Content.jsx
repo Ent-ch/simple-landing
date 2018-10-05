@@ -1,8 +1,6 @@
 import React from 'react';
-import { NavHashLink as NavLink, HashLink as Link } from 'react-router-hash-link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faUniversity } from '@fortawesome/free-solid-svg-icons';
-import ReactCountryFlag from 'react-country-flag';
+import { faUniversity } from '@fortawesome/free-solid-svg-icons';
 
 const Content = (props) =><div id="content-wrapper" className="mui--text-center">
   <div className="mui--appbar-height"></div>

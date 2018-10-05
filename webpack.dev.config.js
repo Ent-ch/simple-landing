@@ -5,7 +5,7 @@ const webpack = require("webpack");
 module.exports = {
     context: __dirname,
     entry: { 
-        jsx_bundle: "./src/app.jsx",
+        jsx_bundle: "./src/App.jsx",
         vendor: ['react', 'react-dom', 'react-router-dom', 'remarkable', 'whatwg-fetch', 'es6-shim']
     },
     output: {
