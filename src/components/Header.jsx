@@ -5,6 +5,8 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import ReactCountryFlag from 'react-country-flag';
 import { getText as getTextMain } from '../constant.js';
 
+// import Appbar from 'muicss/lib/react/appbar';
+
 const Header = ({lang = 'ua', handleLang}) => {
   const getText = text => getTextMain(lang, text);
 
@@ -17,7 +19,7 @@ const Header = ({lang = 'ua', handleLang}) => {
           <td className="mui--text-title"><a href="#" smooth>Brand.io</a></td>
           <td className="mui--text-right">
             <ul className="mui-list--inline mui--text-body2">
-              <li><Link to="/#footer" smooth>{getText('Footer')}</Link></li>
+              <li><Link to="/feedback" smooth>{getText('Feedback')}</Link></li>
               <li><a href="#">{getText('Pricing')}</a></li>
               <li><a href="#"><FontAwesomeIcon icon={faUser} /> {getText('Login')} </a></li>
               <li><a onClick={() => handleLang('ua')}><ReactCountryFlag code="UA" svg /></a></li>

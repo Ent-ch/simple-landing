@@ -4,20 +4,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 
-import Appbar from 'muicss/lib/react/appbar';
-import Button from 'muicss/lib/react/button';
-import Container from 'muicss/lib/react/container';
+// import Container from 'muicss/lib/react/container';
 
 // import 'font-awesome/css/font-awesome.min.css';
 import 'muicss/dist/css/mui.css';
 import './app.css';
 
-import { apiUrl } from './constant';
+// import { apiUrl } from './constant';
 
 import MdRender from "./components/MdRender.jsx";
 import Header from "./components/Header.jsx";
 import Content from "./components/Content.jsx";
 import About from "./components/About.jsx";
+import Feedback from "./components/Feedback.jsx";
 
 const NoMatch = ({ location }) => (
   <div>
@@ -28,7 +27,11 @@ const NoMatch = ({ location }) => (
 );
 
 const MainPage = () => <App mainChapter="home" showMD />;
-  
+
+const FeedbackPage = () => <App mainChapter="Feedback">
+  <Feedback />
+</App>;
+
 const AboutPage = () => <App mainChapter="About">
   <About />
 </App>;
@@ -110,9 +113,10 @@ homeEl && ReactDOM.render(
     <HashRouter>
         <Switch>
             <Route exact path='/' component={MainPage}/>
-            <Route path='/Documentation/:chapter' component={DocumentsPage}/>
-            <Route path='/Documentation' component={DocumentsPage}/>
-            <Route path='/About' component={AboutPage}/>
+            <Route path='/Documentation/:chapter' component={DocumentsPage} />
+            <Route path='/Documentation' component={DocumentsPage} />
+            <Route path='/Feedback' component={FeedbackPage} />
+            <Route path='/About' component={AboutPage} />
             <Route component={NoMatch} />
         </Switch>
     </HashRouter>,

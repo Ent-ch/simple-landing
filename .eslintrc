@@ -23,7 +23,8 @@
       "curly": "warn",
       "no-undef": "error",
       "no-unused-vars": "off",
-      "no-extra-boolean-cast":"off"
+      "no-extra-boolean-cast":"off",
+      "no-unreachable": "warn"
     },
     "globals": {
       "$": true
